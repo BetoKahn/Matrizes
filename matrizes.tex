@@ -1,0 +1,64 @@
+\documentclass[10pt, a4paper, onecolumn, final]{article}
+% 3 pacotes para hifenização correta em português.
+\usepackage[brazilian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%Para excluir o recuo do 1o paragrafo
+\usepackage{parskip}
+%Para inserir figuras
+\usepackage{graphicx}
+\usepackage{amsmath}
+%\usepackage[all]{xy}
+%\usepackage[]{geometry} %top=1cm, bottom=0cm,left=3.5cm, right=3.0cm
+\usepackage{amssymb}
+\usepackage{textcomp} %para o sinal de copyright 
+\title{Matrizes, Sistemas Lineares\\ e \\Determinantes}
+\author{Roberto Kahn Pereira}
+\date{Julho/2012}
+
+%\includeonly{introducao}
+%\includeonly{operacoesComMatrizes}
+%\includeonly{inversa}
+%\includeonly{sistemas}
+%\includeonly{determinantes}
+
+\begin{document}
+\maketitle
+\vfill
+\newpage
+\tableofcontents
+\newpage
+\section*{Agradecimentos}
+\addcontentsline{toc}{section}{Agradecimentos}
+Agradeço a Deus por me dar inteligencia e meios para escrever trabalhos como este. Este trabalho foi escrito em \LaTeX, usando o software LaTeXila em um PC com sistema Ubuntu. Um agradecimento a todos os envolvidos nesses projetos.
+\section*{Licença}
+\addcontentsline{toc}{section}{Licença}
+Este trabalho foi licenciado com a Licença Creative Commons Atribuição - Não Comercial 3.0 Brasil. Para ver uma cópia desta licença, visite:\\http://creativecommons.org/licenses/by-nc/3.0/br/\\ ou envie um pedido por carta para Creative Commons, 444 Castro Street, Suite 900, Mountain View, California, 94041, USA.\\
+Você tem a liberdade de:
+\begin{description}
+    \item[Compartilhar] copiar, distribuir e transmitir a obra.
+    \item [Remixar] criar obras derivadas.
+\end{description}
+Sob as seguintes condições:
+\begin{description}
+    \item[Atribuição] Você deve creditar a obra da forma especificada pelo autor ou licenciante (mas não de maneira que sugira que estes concedem qualquer aval a você ou ao seu uso da obra).
+    \item[Uso não comercial] Você não pode usar esta obra para fins comerciais.
+\end{description}
+Comentários e sugestões, posso ser encontrado em: robertokahn@facebook.com\\
+Código e arquivos dvi e ps disponiveis em:\\http://github.com/BetoKahn/Matrizes\\[0.5cm]
+%\begin{center}
+    \textcopyright 2012 Roberto Kahn Pereira
+%\end{center}
+\section*{Sobre este texto}
+\addcontentsline{toc}{section}{Sobre este texto}
+Quando eu dava plantão de dúvidas em um cursinho, percebi que precisava estudar mais sobre determinantes. A motivação para esse estudo foi começar a escrever um texto sobre o assunto, e como eu queria aprender \LaTeX, comecei a escrever nessa linguagem. Usei a sequência de temas: matrizes, sistemas e determinantes, porque me pareceu mais simples dessa forma.\\
+O conteúdo aborda quase todos os temas dados no ensino médio, mas acredito que possa ser usado como um resumo desses temas para cursos introdutórios de álgebra linear e vetores ou calculo numérico. Alguns temas estão faltando como: Sistemas de Cramer e determinação da inversa através da matriz adjunta e talvez algum outro tema que não me lembre agora.\\
+Espero que você goste do trabalho, no futuro pode ser que eu complete os temas faltantes.
+\newpage
+\hangindent=0.0cm
+\include{introducao}
+\include{operacoesComMatrizes}
+\include{inversa}
+\include{sistemas}
+\include{determinantes}
+\end{document}

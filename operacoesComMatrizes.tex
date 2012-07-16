@@ -1,0 +1,150 @@
+\section{Operações com matrizes}
+\subsection{Multiplicação por Real}
+Para multiplicar uma matriz A por um numero real $\alpha$, se deve multiplicar todos os elementos da matriz por $\alpha$, como a seguir:
+\begin{displaymath}
+\text{Seja a matriz A=}
+\begin{bmatrix}
+  a_{11} & a_{12}\\ a_{21} & a_{22}\\ a_{31} & a_{32}\\
+\end{bmatrix}
+\end{displaymath}
+e seja $\alpha$ um número real qualquer, então:
+\begin{displaymath}
+\alpha \cdot A = \begin{bmatrix}
+  \alpha \cdot a_{11} &\alpha \cdot  a_{12}\\ \alpha \cdot a_{21} &\alpha \cdot  a_{22}\\
+  \alpha \cdot a_{31} & \alpha \cdot a_{32} \end{bmatrix}
+\end{displaymath}
+Em relação a multiplicação de uma matriz por um número real, vale a propriedade comutativa: \[A \cdot \alpha = \alpha \cdot A \]
+Exemplo: Seja $ A= \left( \begin{smallmatrix} 11 & 26 \\ \pi & 5
+\end{smallmatrix} \right)$. Calcular a matriz B, tal que $B=3A$.
+%\begin{align*}
+\begin{displaymath}
+B=3A=3 \cdot
+  \begin{bmatrix}
+    11 & 26 \\ \pi & 5
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    3 \cdot 11 & 3 \cdot 26 \\ 3 \cdot \pi & 3 \cdot 5
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    33 & 78 \\ 3\pi & 15
+  \end{bmatrix}
+\end{displaymath}
+%\end{align*}
+\subsection{Soma e subtração}
+A soma (e subtração) de matrizes se faz assim: Basta somar ( ou subtrair ) um a um os elementos das duas matrizes.
+Sejam A e B duas matrizes e C = A + B, resulta $c_{ij}=a_{ij}+b_{ij}$.\\
+Para simplicidade vou usar matrizes $2 \times 2$, mas muitas dessas operações valem para matrizes $n \times m$. Para matrizes genéricas $2 \times 2$ fica:
+\begin{displaymath}
+  A+B=
+  \begin{bmatrix}
+  a_{11} & a_{12}\\a_{21} & a_{22}  
+  \end{bmatrix}
+  +
+  \begin{bmatrix}
+  b_{11} & b_{12}\\b_{21} & b_{22}  
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+  a_{11}+b_{11} & a_{12}+b_{12}\\a_{21}+b_{21} & a_{22}+b_{22}  
+  \end{bmatrix}
+\end{displaymath}
+Exemplo:
+\begin{displaymath}
+A=
+\begin{bmatrix}
+  1 & 2 \\ 3 & 4
+\end{bmatrix}
+ \quad B=\begin{bmatrix}
+ 5 & 6 \\ 7 & 8 \end{bmatrix}
+\quad A + B =
+\begin{bmatrix}
+  1+5=6 & 2+6=8\\
+  3+7=10 & 4+8=12
+  \end{bmatrix}
+\end{displaymath}
+Fazendo agora a subtração $ B-A $, temos:
+\begin{displaymath}
+\begin{bmatrix}
+5 & 6 \\
+7 & 8
+\end{bmatrix}
+-
+\begin{bmatrix}
+1 & 2 \\ 
+3 & 4
+\end{bmatrix}
+=
+\begin{bmatrix}
+5-1 & 6-2 \\ 
+7-3 & 8-4
+\end{bmatrix}
+=
+\begin{bmatrix}
+4 & 4 \\ 
+4 & 4
+\end{bmatrix} 
+\end{displaymath}
+Para a adição de matrizes valem as propriedades:
+\begin{description}
+\item[Comutativa] $A+B=B+A$
+\item[Associativa]$ A+(B+C)=(A+B)+C $
+\end{description}
+
+\subsection{Multiplicação}
+A multiplicação de matrizes é um pouco mais complicada. Primeiro: O número de colunas da primeira matriz deve ser igual ao número de linhas da segunda, sem essa condição não é possivel a multiplicação de matrizes e com alguma prática, você entenderá porque. 
+Suponha duas matrizes quadradas 2x2 A e B, a multiplicação A$\cdot$B=P, resulta: 
+\begin{displaymath}
+\begin{bmatrix}
+  a_{11} & a_{12}\\ a_{21} & a_{22}\\
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+  b_{11} & b_{12}\\ b_{21} & b_{22}\\
+  \end{bmatrix}
+=
+\begin{bmatrix}
+  a_{11}b_{11}+a_{12}b_{21} & a_{11}b_{12}+a_{12}b_{22} \\
+  a_{21}b_{11}+a_{22}b_{21} & a_{21}b_{12}+a_{22}b_{22} \\
+\end{bmatrix}
+ =
+\begin{bmatrix}
+   p_{11} & p_{12} \\ p_{21} & p_{22} \\
+\end{bmatrix}
+\end{displaymath}
+Agora você viu que o termo $p_{ij}$ se calcula a partir da linha i da matriz A e da coluna j da matriz B, se deve multiplicar termo a termo e somar os produtos dos elementos dessas linhas e colunas. Observe que a multiplicação de matrizes não é necessariamente comutativa, ou seja, $A\cdot B$ pode ser diferente de $B\cdot A$. Não existe divisão de matrizes.\\
+Exemplo:\\
+Sejam as matrizes:
+\begin{displaymath}
+  A=
+  \begin{bmatrix}
+    1 & 3 \\ 5 & 7
+  \end{bmatrix}
+  \text{ e }
+  B=
+  \begin{bmatrix}
+    2 & 4 \\ 6 & 8
+  \end{bmatrix}
+\end{displaymath}
+O produto $A \cdot B$ é:
+\begin{displaymath}
+A\cdot B=
+\begin{bmatrix}
+  1 \cdot 2+3 \cdot 6 & 1 \cdot 4+3 \cdot 8 \\
+  5 \cdot 2+7 \cdot 6 & 5 \cdot 4+7 \cdot 8
+\end{bmatrix}
+=
+\begin{bmatrix}
+  20 & 28\\
+  52 & 76
+\end{bmatrix}
+\end{displaymath}
+O produto $B\cdot A$ resulta:
+\begin{displaymath}
+  B\cdot A=
+  \begin{bmatrix}
+    22 & 34\\46 & 74
+  \end{bmatrix}
+\end{displaymath}
+Você pode fazer a demonstração como exercício.

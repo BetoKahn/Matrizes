@@ -1,0 +1,77 @@
+\section{Matriz Inversa}
+\subsection{Matriz Identidade}
+Existe uma matriz especial, chamada \textit{matriz identidade}. Normalmente ela é denotada pela letra I, e ela é sempre quadrada com o número 1 na diagonal principal e 0 no resto. Ex:
+\begin{displaymath}
+I_2=
+\begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+\: I_3=
+\begin{bmatrix}
+1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\\
+\end{bmatrix}
+\end{displaymath}
+\subsection{Matrizes Equivalentes}
+ Sejam M, M' e M'' matrizes equivalentes, elas possuem as seguintes propriedades:\\
+O Sinal $\sim$ indica uma relação de equivalência\footnote{Esse tópico é objeto de estudo da álgebra e tem importância também no estudo de sistemas lineares. Sistemas lineares são vistos na seção \ref{sec:sis}.}. Achei interessante mencionar esse assunto para mostrar que há relação entre uma matriz (ou sistema) que sofre uma operação elementar e a matriz, ou sistema, resultante dessa operação, porque apesar de não serem identicos, possuem entre si uma relação de equivalencia, que garante certas propriedades.
+\begin{description}
+  \item[Reflexiva] M $\sim$ M.
+  \item[Simétrica] $M\sim M'\Rightarrow M'\sim M.$
+  \item[Transitiva]$Se\,  M\sim M'\text{ e }M'\sim M''\text{, então }M\sim M''.$
+\end{description}
+\subsection{Operações elementares}
+\label{subsec:ope-ele}
+Existem 3 operações que se pode fazer com as linhas de uma matriz M e transformam M em M' que é equivalente à M, essas operações são chamadas de \textit{operações elementares}. 
+As operações elementares são:
+\begin{enumerate}
+  \item Trocar duas linhas de uma matriz entre si. Por exemplo:$
+  \begin{bmatrix}
+  1 & 2 \\ 3 & 4  
+  \end{bmatrix}
+  \sim
+  \begin{bmatrix}
+    3 & 4 \\1 & 2
+  \end{bmatrix}
+  $
+  \item Multiplicar uma linha por um número diferente de 0.
+  \item Multiplicar uma linha por um número diferente de 0 e somar a outra linha.
+\end{enumerate}
+\subsection{Definição de Matriz Inversa}
+A matriz inversa de A é a matriz $A^{-1}$, tal que $A\cdot A^{-1}=A^{-1}\cdot A = I$. Se existe A e $A^{-1}$, então é dito que a matriz A é \textit{inversível}, mas cuidado, porque nem toda matriz é inversível. Mais a frente será visto um algoritmo (método) para se obter a inversa de uma matriz.\\
+Uma matriz com determinante\footnote{Os determinantes são vistos mais a frente na seção \ref{sec:det}.} nulo \textit{não é inversível}. Se uma matriz possui uma linha (ou coluna) inteira nula (somente com o número 0), ou se ela possui 2 linhas ou colunas iguais, então ela possui determinante nulo e \textit{não possui inversa}.
+\subsection{Determinação da Inversa}
+Existe um teorema que garante que o mesmo conjunto de operações elementares que transformam $A$ em $I$, também transformam $I$ em $A^{-1}$, caso exista. Então basta escrever a Matriz $A$ ao lado da $I$, separadas por um traço vertical para melhor vizualização, e aplicar operações elementares\footnote{Aquelas operações definidas em \ref{subsec:ope-ele}} simultaneamente na atriz $A$ e na $Identidade$ até que $A$ se torne a $Identidade$, então do outro lado estará a inversa. Exemplo:
+\begin{displaymath}
+\text{Seja A=}
+\begin{bmatrix}
+  1 & 0 \\ 3 & 4
+\end{bmatrix}
+\end{displaymath}
+Vamos calcular a matriz $A^{-1}$:
+\begin{displaymath}
+\left(
+\begin{array}{c c|c c}
+  1 & 0 & 1 & 0\\3 & 4 & 0 & 1
+\end{array}\right)
+\end{displaymath}
+Dividindo por 4 a $2^a$ linha, resulta:
+\begin{displaymath}
+\left(\begin{array}{c c|c c}
+  1 & 0 & 1 & 0\\3/4 & 1 & 0 & 1/4
+\end{array}\right)
+\end{displaymath}
+Multiplicando a $1^a$ linha por -3/4 e somando com a $2^a$, obtemos o resultado final:
+\begin{displaymath}
+\left(\begin{array}{c c|c c}
+  1 & 0 & 1 & 0\\0 & 1 & -3/4 & 1/4
+\end{array}\right)
+\end{displaymath}
+Do lado esquerdo temos a matriz identidade e do direito a inversa da matriz inicial.
+A matriz $A^{-1}$ resulta:
+\begin{displaymath}
+A^{-1}=\begin{bmatrix}
+  1 & 0 \\ -3/4 & 1/4
+\end{bmatrix}
+\end{displaymath}
+%Escrever método dos cofatores

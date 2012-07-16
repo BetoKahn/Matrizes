@@ -1,0 +1,146 @@
+\section{Sistemas Lineares}
+\label{sec:sis}
+Um sistema linear é qualquer agrupamento de equações com variáveis de expoente 1, como por exemplo:
+\begin{displaymath}
+\left\{
+\begin{array}{l}
+  3x+y=1\\2x+5y=3
+\end{array}
+\right.
+\end{displaymath}
+Um sistema pode ter, a principio, qualquer número de variáveis e equações, como veremos mais a frente.
+Um sistema linear pode ser expresso de forma matricial. Usando o sistema do exemplo anterior, podemos re-escreve-lo como:
+\[
+\begin{bmatrix}
+  3 & 1\\2 & 5 \end{bmatrix}
+\cdot
+\begin{bmatrix}
+  x\\y \end{bmatrix}
+=
+\begin{bmatrix}
+  1\\3 \end{bmatrix}
+  \]
+  Todo sistema linear pode ser escrito como $A\cdot X=B$, onde A é chamada de \textit{matriz dos coeficientes}, X é chamada de \textit{matriz das incógnitas} e B é chamada de \textit{matriz dos termos independentes}.
+  
+  Em sistemas se podem aplicar operações elementares às equações do sistema, de forma idêntica ao que se pode fazer com matrizes e o sistema resultante será um sistema equivalente, com as mesmas propriedades da equivalência de matrizes.
+  \[\text{O sistema:}\left\{
+  \begin{array}{l}
+    3x+2y=4\\ 5x+y=3
+  \end{array}\right.
+  \sim
+  \left\{
+  \begin{array}{l}
+    3x+2y=4\\ 2x-y=-1
+  \end{array}\right.\]
+  Onde subtrai a $2^a$ equação da $1^a$ e o sinal $\sim$ representa a relação de equivalência.
+  \subsection{Resolução de Sistemas Lineares}
+\subsubsection*{Método da substituição}
+  \addcontentsline{toc}{subsubsection}{Método da substituição}
+  Resolver um sistema linear significa determinar o valor das incógnitas de forma que todas as equações do sistema sejam simultaneamente verdadeiras ou verificar que isso é impossível, como será visto mais adiante.\\
+  Vamos resolver o sistema a seguir:
+  \[
+  \left\lbrace
+  \begin{array}{lr}
+  3x+y=1 & (1)\\
+  x+y=3 & (2)  
+  \end{array}
+  \right.
+  \]
+Da equação (2), temos que y=3-x (3). Substituindo (3) na equação (1), resulta:
+\[\begin{array}{l}
+3x+y=1\\
+3x+3-x=1\\
+2x=-2 \\
+x=-1\\
+\text{Usando (3) descobrimos que y=4}
+\end{array}
+\]
+Esse é o método da substituição. Para mais de 2 variáveis o processo é similar, no entanto vai resultar em contas mais complicadas. Nesses casos, com mais de 2 variáveis, é melhor usar o método de Gauss, explicado mais a frente.
+\paragraph*{Substituição retroativa}
+Quando se tem um sistema escalonado, como:
+\begin{equation*}
+\left\lbrace
+\begin{array}{l}
+ax+by+cz=l\\
+\qquad dy+ez=m\\
+\qquad \qquad fz=n
+\end{array}
+\right.
+\end{equation*}
+Então as soluções serão:
+\begin{equation*}
+  \begin{array}{l}
+    z=\frac{\displaystyle n}{\displaystyle f}\\
+    \text{Conhecendo z, achamos y:}\\
+    y=\frac{\displaystyle m-ez}{\displaystyle d}\\
+    \text{Sabendo z e y, x resulta:}\\
+    x=\frac{\displaystyle e-cz-by}{\displaystyle a}
+  \end{array}
+\end{equation*}
+Esse algoritmo de encontrar as incógnitas por substituições sucessivas se chama \textit{substituição retroativa}.
+  \subsubsection*{Método de Gauss}
+  \addcontentsline{toc}{subsubsection}{Método de Gauss}
+  O método de Gauss é um algoritmo para fazer uma matriz (ou um sistema) adquirir a forma triangular superior. Ele usa \textit{pivôs} na diagonal principal. A cada operação se deve zerar todos os elementos abaixo do pivô, e para isso se deve multiplicar a linha do pivô por um número conveniente (o multiplicador) e adiciona-la à linha que se quer zerar os termos. Para encontrar o multiplicador você deve dividir o número que você quer zerar pelo pivô e usar o sinal inverso.\\
+  Por exemplo na matriz $\left(\begin{smallmatrix}2&4\\1&0\end{smallmatrix}\right)$ você tem como $1^o$ pivô o 2 e o multiplicador da $1^a$ linha será -(1/2). A seguir vamos fazer um exemplo completo:
+  \[\left\{
+    \begin{array}{l}
+    x+2y+z=2\\
+    \qquad 3y+2z=1\\
+    5x+y+z=5
+    \end{array}\right.\]
+    O $ 1^{\underline{o}} $ pivô é o coeficiente de x na $1^a$ equação. O multiplicador da $3^a$ linha é $-5/1=-5$.
+Então, multiplicamos a $1^a$ linha por -5 e somamos na última, resultando:
+    \[\left\{
+    \begin{array}{l}
+    x+2y+z=2\\
+    \qquad 3y+2z=1\\
+    \quad -9y-4z =--5  
+    \end{array}\right.\]
+    Agora o pivô é o coeficiente de y na $2^a$ equação, 3, e o multiplicador da $3^a$ linha é $-(-9)/3=3$.
+Multiplicando a $2^a$ linha por 3 e somando na $3^a$, temos:
+    \[\left\{
+    \begin{array}{l}
+    x+2y+z=2\\
+    \qquad 3y+2z=1\\
+    \qquad\quad 2z =-2  
+    \end{array}\right.\]
+    Fazendo a substituição retroativa temos como solução $z=1$, $y= -\frac{1}{3}$ e $x=\frac{1}{3}$.
+    
+  \subsection{Discussão de Sistemas Lineares}
+  Um sistema linear pode ser:
+  \begin{description}
+    \item[Possível e Determinado]É quando um sistema admite 1 única solução, como foi o caso do exemplo visto na seção
+ anterior.
+    \item[Possível e Indeterminado]É quando um sistema admite infinitas soluções.
+    \item [Impossível]É quando o sistema não admite solução. Por exemplo:\\$\left\{\begin{array}{l}
+      x+y=1\\x+y=2
+    \end{array}\right.$ É um sistema sem solução.
+  \end{description}
+\paragraph{Sistema Possível e Indeterminado}
+  Este tipo de sistema é reconhecido quando na forma escalonada ele apresenta uma linha do tipo $0x_1+0x_2+
+\dots+0x_n=0$, onde $x_i$ são as $n$ variáveis do sistema. A notação de chamar as variaveis por $x_1, x_2, \cdots, x_n$ é 
+mais versátil, às vezes, do que $x, y, z, ...$. A solução desse sistema é escrita em função de uma
+ ou mais variáveis, que são chamadas de \textit{variáveis livres}. Por exemplo o sistema:\[
+  \left\{\begin{array}{l}
+    4x+y+z=2\\2x+5y+3z=3\\6x+6y+4z=5
+  \end{array}\right.\]
+  Na forma escalonada fica:\[
+  \left\{\begin{array}{l}
+    4x+y+z=2\\0x+4,5y+2,5z=2\\0x+0y+0z=0
+  \end{array}\right.\]
+  Selecionando z como a variável livre, podemos escrever x e y em função de z, resultando como conjunto solução:
+    \[
+      S=\left\{ \left( x=\frac{7}{18}-\frac{1}{9}z,y=\frac{4}{9}-\frac{5}{9}z\right)\right\}
+    \]
+    Você percebe que existe um par de soluções para cada valor de z, e existem infinitos valores de z possiveis, logo existem infinitas soluções.
+    \paragraph{Sistemas Impossíveis}
+    Um sistema é impossível quando uma das linhas do sistema escalonado é do tipo: $0x_1+0x_2+\dots+0x_n=\beta$ onde $\beta$ é um número real.\[
+    \text{Seja o sistema:}
+    \left\{\begin{array}{l}
+      x+y=2\\x+y=3
+    \end{array}\right.
+    \sim
+    \left\{\begin{array}{l}
+      x+y=2\\0x+0y=1
+   \end{array}\right.\]
+   Você percebe claramente que como $0\neq 1$ para quaisquer valores de x e y, então não existe solução para esse sistema.
