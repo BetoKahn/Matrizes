@@ -14,7 +14,7 @@ I_2=
 \end{displaymath}
 \subsection{Matrizes Equivalentes}
  Sejam M, M' e M'' matrizes equivalentes, elas possuem as seguintes propriedades:\\
-O Sinal $\sim$ indica uma relação de equivalência\footnote{Esse tópico é objeto de estudo da álgebra e tem importância também no estudo de sistemas lineares. Sistemas lineares são vistos na seção \ref{sec:sis}.}. Achei interessante mencionar esse assunto para mostrar que há relação entre uma matriz (ou sistema) que sofre uma operação elementar e a matriz, ou sistema, resultante dessa operação, porque apesar de não serem identicos, possuem entre si uma relação de equivalencia, que garante certas propriedades.
+O Sinal $\sim$ indica uma relação de equivalência\footnote{Esse tópico é objeto de estudo da álgebra e tem importância também no estudo de sistemas lineares. Sistemas lineares são vistos na seção \ref{sec:sis}.}. Achei interessante mencionar esse assunto para mostrar que há relação entre uma matriz (ou sistema) que sofre uma operação elementar e a matriz, ou sistema, resultante dessa operação, porque apesar de não serem idênticos, possuem entre si uma relação de equivalência, que garante certas propriedades.
 \begin{description}
   \item[Reflexiva] M $\sim$ M.
   \item[Simétrica] $M\sim M'\Rightarrow M'\sim M.$
@@ -41,7 +41,7 @@ As operações elementares são:
 A matriz inversa de A é a matriz $A^{-1}$, tal que $A\cdot A^{-1}=A^{-1}\cdot A = I$. Se existe A e $A^{-1}$, então é dito que a matriz A é \textit{inversível}, mas cuidado, porque nem toda matriz é inversível. Mais a frente será visto um algoritmo (método) para se obter a inversa de uma matriz.\\
 Uma matriz com determinante\footnote{Os determinantes são vistos mais a frente na seção \ref{sec:det}.} nulo \textit{não é inversível}. Se uma matriz possui uma linha (ou coluna) inteira nula (somente com o número 0), ou se ela possui 2 linhas ou colunas iguais, então ela possui determinante nulo e \textit{não possui inversa}.
 \subsection{Determinação da Inversa}
-Existe um teorema que garante que o mesmo conjunto de operações elementares que transformam $A$ em $I$, também transformam $I$ em $A^{-1}$, caso exista. Então basta escrever a Matriz $A$ ao lado da $I$, separadas por um traço vertical para melhor vizualização, e aplicar operações elementares\footnote{Aquelas operações definidas em \ref{subsec:ope-ele}} simultaneamente na atriz $A$ e na $Identidade$ até que $A$ se torne a $Identidade$, então do outro lado estará a inversa. Exemplo:
+Existe um teorema que garante que o mesmo conjunto de operações elementares que transformam $A$ em $I$, também transformam $I$ em $A^{-1}$, caso exista. Então basta escrever a Matriz $A$ ao lado da $I$, separadas por um traço vertical para melhor visualização, e aplicar operações elementares\footnote{Aquelas operações definidas em \ref{subsec:ope-ele}} simultaneamente na atriz $A$ e na $Identidade$ até que $A$ se torne a $Identidade$, então do outro lado estará a inversa. Exemplo:
 \begin{displaymath}
 \text{Seja A=}
 \begin{bmatrix}
@@ -74,4 +74,18 @@ A^{-1}=\begin{bmatrix}
   1 & 0 \\ -3/4 & 1/4
 \end{bmatrix}
 \end{displaymath}
-%Escrever método dos cofatores
+\subsubsection{Outro método}
+\paragraph*{Matriz adjunta} Também conhecida como \textit{adjunta clássica}. Dada uma matriz $A$ de ordem $n$, com elementos $a_{ij}$, a adjunta é a matriz formada pelos cofatores\footnote{Os cofatores são vistos na seção \ref{par:cof}} de $A$, denotados $A_{ij}$.
+\begin{displaymath}
+    adj(A)= 
+    \begin{bmatrix}
+    A_{11} & A_{12} & \cdots & A_{1n}\\
+    A_{21} & A_{22} & \cdots & A_{2n}\\
+    \vdots & \vdots & \ddots & \vdots \\
+    A_{n1} & A_{n2} & \cdots & A_{nn}\\
+    \end{bmatrix}
+\end{displaymath}
+A matriz inversa de $A$, $A^{-1}$ pode ser calculada a partir da seguinte fórmula:
+\begin{displaymath}
+    A^{-1}=\frac{1}{det(A)}adj(A)
+\end{displaymath}

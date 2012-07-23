@@ -23,7 +23,7 @@ A definição matemática dessa função é complicada e vou omitir nesse texto.
    Seu determinante é obtido multiplicando os elementos da diagonal principal e subtraindo o resultado do produto dos elementos da diagonal secundaria, ou de forma mais simples:\[ det(A)=
    \begin{vmatrix}a & b\\c & d\end{vmatrix}=a\cdot d-b\cdot c\]
    
-   \subsection{Determinantes de ordem 3}
+   \subsection{Determinantes de matrizes de ordem 3}
   
 Seja a matriz $A=\begin{bmatrix}
      a & b & c\\d & e & f\\g & h & i
@@ -42,7 +42,7 @@ colunas da matriz ao final da mesma e se atribuem os sinais de acordo com a figu
    \subsection{Determinantes de ordem maior que 3}
    \subsubsection*{Método de Laplace}
    \addcontentsline{toc}{subsubsection}{Método de Laplace}
-   \paragraph*{Cofator} O cofator $A_{ij}$ obtido a partir do elemento $a_{ij}$ da matriz A é obtido multiplicando-se o fator $-1^{i+j}$ pelo determinante da matriz A, excluídas a linha i e coluna j. Por exemplo:
+   \paragraph*{Cofator} \label{par:cof}O cofator $A_{ij}$ obtido a partir do elemento $a_{ij}$ da matriz A é obtido multiplicando-se o fator $-1^{i+j}$ pelo determinante da matriz A, excluídas a linha i e coluna j. Por exemplo:
 \begin{displaymath}
     \text{Seja A=}\begin{bmatrix}
      a & b & c\\d & e & f\\g & h & i
@@ -95,7 +95,7 @@ Primeiro vou trocar de lugar a $1^a$ com a $2^a$ linhas:
 \[\begin{vmatrix} 0 & 1 & 2 \\ 1 & 4 & 3 \\ 2 & 2 & 2 \end{vmatrix} =- \begin{vmatrix}  1 & 4 & 3\\0 & 1 & 2  \\ 2 & 2 & 2 \end{vmatrix}=\]
 Agora vou colocar o 2 da $3^a$ linha para fora do determinante:
 \[=-2 \begin{vmatrix}  1 & 4 & 3\\0 & 1 & 2  \\ 1 & 1 & 1 \end{vmatrix}= \]
-Usando o método de Gauss para triângularizar o determinante, resulta:
+Usando o método de Gauss para triangularizar o determinante, resulta:
 \[=-2 \begin{vmatrix}  1 & 4 & 3\\0 & 1 & 2  \\ 0 & 0 & 4 \end{vmatrix}= -2 \cdot 4 = -8\]
 
    \newpage
@@ -104,5 +104,5 @@ Usando o método de Gauss para triângularizar o determinante, resulta:
 \begin{enumerate}
   \item Álgebra Linear e Aplicações; Callioli,A. C., Domingues, H. H., Costa, R. C. F., $6^{\underline{a}}$ edição.
   \item http://pt.wikipedia.org/wiki/Determinante
-  \item http://mathworld.wolfram.com/MatrixInverse.html - artigo sobre matrizes inversas, em ingles.
+  \item http://mathworld.wolfram.com/MatrixInverse.html - artigo sobre matrizes inversas, em inglês.
 \end{enumerate}
